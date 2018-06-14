@@ -10,7 +10,7 @@ import io.reactivex.annotations.NonNull;
  */
 
 @Entity
-public class Utilisateur {
+public class Developpeur {
 
     @PrimaryKey
     @android.support.annotation.NonNull
@@ -24,7 +24,7 @@ public class Utilisateur {
     private String adresse;
     private Boolean isLeader;
 
-    public Utilisateur(String nom, String prenom, String mdp, String email, String expertise, String telephone, String adresse, Boolean isLeader) {
+    public Developpeur(String nom, String prenom, String mdp, String email, String expertise, String telephone, String adresse, Boolean isLeader) {
         this.nom = nom;
         this.prenom = prenom;
         this.mdp = mdp;

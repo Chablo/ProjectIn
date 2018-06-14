@@ -200,8 +200,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
             database = AppDatabase.getDatabase(getApplicationContext());
 
-            Utilisateur utilisateur = database.utilisateurDao().loadUtilisateur(email);
-            if(utilisateur != null && utilisateur.getMdp().equals(password)){
+            Developpeur developpeur = database.developpeurDao().loadUtilisateur(email);
+            if(developpeur != null && developpeur.getMdp().equals(password)){
                 Intent appel_profil = new Intent(LoginActivity.this, Inscription1.class);
                 startActivity(appel_profil);
             }

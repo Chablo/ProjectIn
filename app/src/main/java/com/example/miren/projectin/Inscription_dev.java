@@ -1,6 +1,5 @@
 package com.example.miren.projectin;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -67,9 +66,9 @@ public class Inscription_dev extends AppCompatActivity {
 
                 if(isValid) {
                     database = AppDatabase.getDatabase(getApplicationContext());
-                    Utilisateur utilisateur = new Utilisateur(nom.getText().toString(), prenom.getText().toString(), motdepasse.getText().toString(), mail.getText().toString(), experience.getText().toString(), telephone.getText().toString(), adresse.getText().toString(), false);
+                    Developpeur developpeur = new Developpeur(nom.getText().toString(), prenom.getText().toString(), motdepasse.getText().toString(), mail.getText().toString(), experience.getText().toString(), telephone.getText().toString(), adresse.getText().toString(), false);
 
-                    database.utilisateurDao().insertUtilisateur(utilisateur);
+                    database.developpeurDao().insertUtilisateur(developpeur);
 
                     Intent appel_dev = new Intent(Inscription_dev.this, LoginActivity.class);
                     startActivity(appel_dev);
