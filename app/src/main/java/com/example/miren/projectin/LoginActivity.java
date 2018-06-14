@@ -147,8 +147,17 @@ public class LoginActivity extends AppCompatActivity {
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 focusView = mPasswordView;
             } else if(developpeur == null){
-                mEmailView.setError(getString(R.string.error_invalid_email));
-                focusView = mEmailView;
+                Leader leader = database.leaderDao().loadLeader(email);
+                if(leader != null && leader.getMdp().equals(password)){
+                    Intent appel_profil = new Intent(LoginActivity.this, Inscription1.class);
+                    startActivity(appel_profil);
+                } else if(leader != null && !leader.getMdp().equals(password)) {
+                    mPasswordView.setError(getString(R.string.error_incorrect_password));
+                    focusView = mPasswordView;
+                } else {
+                    mEmailView.setError(getString(R.string.error_invalid_email));
+                    focusView = mEmailView;
+                }
             }
         }
     }
