@@ -70,8 +70,8 @@ public class Inscription_dev extends AppCompatActivity {
 
                     database.developpeurDao().insertDeveloppeur(developpeur);
 
-                    Intent appel_dev = new Intent(Inscription_dev.this, LoginActivity.class);
-                    startActivity(appel_dev);
+                    Intent appel_login = new Intent(Inscription_dev.this, LoginActivity.class);
+                    startActivity(appel_login);
                 }
             }
         });

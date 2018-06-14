@@ -11,7 +11,7 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 /**
  * Created by Miren on 13/06/2018.
  */
-//@Entity(foreignKeys = @ForeignKey(entity = Developpeur.class, parentColumns = "email", childColumns = "leaderEmail", onDelete = CASCADE))
+//@Entity(foreignKeys = @ForeignKey(entity = Leader.class, parentColumns = "email", childColumns = "leaderEmail", onDelete = CASCADE))
 public class Projet {
 
     //@PrimaryKey(autoGenerate = true)
