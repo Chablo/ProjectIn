@@ -29,8 +29,8 @@ public class leader_home extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent appel_projet = new Intent(leader_home.this, ajouter_projet.class);
+                startActivity(appel_projet);
             }
         });
 

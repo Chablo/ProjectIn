@@ -30,6 +30,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -141,16 +142,18 @@ public class LoginActivity extends AppCompatActivity {
 
             Developpeur developpeur = database.developpeurDao().loadDeveloppeur(email);
             if(developpeur != null && developpeur.getMdp().equals(password)){
-                Intent appel_profil = new Intent(LoginActivity.this, Inscription1.class);
-                startActivity(appel_profil);
+                Intent appel_accueil = new Intent(LoginActivity.this, dev_home.class);
+                appel_accueil.putExtra("Developpeur", (Serializable) developpeur);
+                startActivity(appel_accueil);
             } else if(developpeur != null && !developpeur.getMdp().equals(password)){
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 focusView = mPasswordView;
             } else if(developpeur == null){
                 Leader leader = database.leaderDao().loadLeader(email);
                 if(leader != null && leader.getMdp().equals(password)){
-                    Intent appel_profil = new Intent(LoginActivity.this, Inscription1.class);
-                    startActivity(appel_profil);
+                    Intent appel_accueil = new Intent(LoginActivity.this, leader_home.class);
+                   // appel_accueil.putExtra("leader", (Serializable) leader);
+                    startActivity(appel_accueil);
                 } else if(leader != null && !leader.getMdp().equals(password)) {
                     mPasswordView.setError(getString(R.string.error_incorrect_password));
                     focusView = mPasswordView;
