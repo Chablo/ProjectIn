@@ -19,6 +19,7 @@ public class Inscription1 extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         Button leader = (Button) findViewById(R.id.leader);
         Button dev = (Button) findViewById(R.id.developpeur);
+
         setSupportActionBar(toolbar);
 
         leader.setOnClickListener(new View.OnClickListener() {

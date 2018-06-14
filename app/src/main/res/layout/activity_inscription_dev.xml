@@ -17,7 +17,7 @@
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/mail"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:text="Nom"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="25dp" />
@@ -41,7 +41,7 @@
             android:layout_alignStart="@+id/telephone"
             android:layout_marginBottom="16dp"
             android:ems="10"
-            android:inputType="textPersonName"
+            android:inputType="text"
             android:text="Prénom"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="71dp" />
