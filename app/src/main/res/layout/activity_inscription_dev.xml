@@ -17,8 +17,8 @@
             android:layout_alignParentTop="true"
             android:layout_alignStart="@+id/mail"
             android:ems="10"
+            android:hint="Nom"
             android:inputType="text"
-            android:text="Nom"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="25dp" />
 
@@ -29,6 +29,7 @@
             android:layout_above="@+id/prenom"
             android:layout_alignStart="@+id/prenom"
             android:ems="10"
+            android:hint="Mot de passe"
             android:inputType="textPassword"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="117dp" />
@@ -41,8 +42,8 @@
             android:layout_alignStart="@+id/telephone"
             android:layout_marginBottom="16dp"
             android:ems="10"
+            android:hint="Prénom"
             android:inputType="text"
-            android:text="Prénom"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="71dp" />
 
@@ -54,8 +55,8 @@
             android:layout_alignEnd="@+id/button3"
             android:layout_marginBottom="13dp"
             android:ems="10"
+            android:hint="Adresse"
             android:inputType="textEmailAddress"
-            android:text="Adresse mail"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="265dp" />
 
@@ -66,8 +67,8 @@
             android:layout_alignStart="@+id/adresse"
             android:layout_below="@+id/experience"
             android:ems="10"
+            android:hint="Téléphone"
             android:inputType="phone"
-            android:text="Téléphone"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="311dp" />
 
@@ -79,8 +80,8 @@
             android:layout_alignStart="@+id/button3"
             android:layout_marginBottom="31dp"
             android:ems="10"
+            android:hint="Adresse"
             android:inputType="textPostalAddress"
-            android:text="Adresse"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="357dp" />
 
@@ -102,8 +103,8 @@
             android:layout_alignStart="@+id/mail"
             android:layout_centerVertical="true"
             android:ems="10"
+            android:hint="Domaine d'expertise"
             android:inputType="textShortMessage"
-            android:text="Domain d'expertise"
             tools:layout_editor_absoluteX="85dp"
             tools:layout_editor_absoluteY="163dp" />
     </RelativeLayout>
