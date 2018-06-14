@@ -1,10 +1,10 @@
 package com.example.miren.projectin;
 
 /**
- * Created by Miren on 13/06/2018.
+ * Created by Miren on 14/06/2018.
  */
 
-public class Developpeur {
+public class Utilisateur {
     private String nom;
     private String prenom;
     private String mdp;
@@ -12,8 +12,9 @@ public class Developpeur {
     private String expertise;
     private String telephone;
     private String adresse;
+    private Boolean isLeader;
 
-    public Developpeur(String nom, String prenom, String mdp, String email, String expertise, String telephone, String adresse) {
+    public Utilisateur(String nom, String prenom, String mdp, String email, String expertise, String telephone, String adresse, Boolean isLeader) {
         this.nom = nom;
         this.prenom = prenom;
         this.mdp = mdp;
@@ -21,6 +22,15 @@ public class Developpeur {
         this.expertise = expertise;
         this.telephone = telephone;
         this.adresse = adresse;
+        this.isLeader = isLeader;
+    }
+
+    public Boolean getLeader() {
+        return isLeader;
+    }
+
+    public void setLeader(Boolean leader) {
+        isLeader = leader;
     }
 
     public String getNom() {

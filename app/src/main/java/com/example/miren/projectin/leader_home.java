@@ -16,9 +16,7 @@ import android.view.MenuItem;
 
 public class leader_home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private static AccesLocal accesLocal;
-
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
