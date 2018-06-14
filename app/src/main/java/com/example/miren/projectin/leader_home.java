@@ -1,6 +1,7 @@
 package com.example.miren.projectin;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -68,10 +69,20 @@ public class leader_home extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.profil) {
+            Intent productIntent = new Intent(this,profil.class);
+            startActivity(productIntent);
             return true;
+        } else if(id == R.id.ajouter_projet) {
+            Intent productIntent = new Intent(this, ajouter_projet.class);
+            startActivity(productIntent);
+        } else if(id == R.id.projets) {
+            Intent productIntent = new Intent(this, leader_home.class);
+            startActivity(productIntent);
+        } else if(id == R.id.deconnexion) {
+            Intent productIntent = new Intent(this, LoginActivity.class);
+            startActivity(productIntent);
         }
-
         return super.onOptionsItemSelected(item);
     }
 

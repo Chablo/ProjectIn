@@ -4,8 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <item android:title="Ajouter un projet" />
-    <item android:title="Projets proposés" />
-    <item android:title="Profil" />
-    <item android:title="Déconnexion" />
+    <item
+        android:id="@+id/ajouter_projet"
+        android:title="Ajouter un projet" />
+    <item
+        android:id="@+id/projets"
+        android:title="Projets proposés" />
+    <item
+        android:id="@+id/profil"
+        android:title="Profil" />
+    <item
+        android:id="@+id/deconnexion"
+        android:title="Déconnexion" />
 </menu>
