@@ -1,5 +1,6 @@
 package com.example.miren.projectin;
 
+import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +10,9 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Inscription_dev extends AppCompatActivity {
+
+    private AppDatabase database;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +66,11 @@ public class Inscription_dev extends AppCompatActivity {
                 }
 
                 if(isValid) {
+                    database = AppDatabase.getDatabase(getApplicationContext());
+                    Utilisateur utilisateur = new Utilisateur(nom.toString(), prenom.toString(), motdepasse.toString(), mail.toString(), experience.toString(), telephone.toString(), adresse.toString(), false);
+
+                    database.utilisateurDao().insertUtilisateur(utilisateur);
+
                     Intent appel_dev = new Intent(Inscription_dev.this, LoginActivity.class);
                     startActivity(appel_dev);
                 }

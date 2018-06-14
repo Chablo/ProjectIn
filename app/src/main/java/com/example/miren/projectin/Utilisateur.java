@@ -1,10 +1,17 @@
 package com.example.miren.projectin;
 
+import android.arch.persistence.room.Entity;
+import android.arch.persistence.room.PrimaryKey;
+
 /**
  * Created by Miren on 14/06/2018.
  */
 
+@Entity
 public class Utilisateur {
+
+    @PrimaryKey(autoGenerate = true)
+    public int id;
     private String nom;
     private String prenom;
     private String mdp;
@@ -23,6 +30,14 @@ public class Utilisateur {
         this.telephone = telephone;
         this.adresse = adresse;
         this.isLeader = isLeader;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Boolean getLeader() {
