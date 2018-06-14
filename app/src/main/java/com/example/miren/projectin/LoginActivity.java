@@ -167,4 +167,3 @@ public class LoginActivity extends AppCompatActivity {
         return email.contains("@");
     }
 }
-
