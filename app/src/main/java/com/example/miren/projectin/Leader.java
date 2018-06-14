@@ -3,14 +3,8 @@ package com.example.miren.projectin;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
-import io.reactivex.annotations.NonNull;
-
-/**
- * Created by Miren on 14/06/2018.
- */
-
 @Entity
-public class Developpeur {
+public class Leader {
 
     @PrimaryKey
     @android.support.annotation.NonNull
@@ -23,7 +17,7 @@ public class Developpeur {
     private String telephone;
     private String adresse;
 
-    public Developpeur(String nom, String prenom, String mdp, String email, String expertise, String telephone, String adresse) {
+    public Leader(String nom, String prenom, String mdp, String email, String expertise, String telephone, String adresse) {
         this.nom = nom;
         this.prenom = prenom;
         this.mdp = mdp;

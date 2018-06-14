@@ -7,15 +7,15 @@ import android.arch.persistence.room.Query;
 @Dao
 public interface DeveloppeurDao {
     @Query("SELECT * FROM Developpeur")
-    public Developpeur[] loadAllUtilisateurs();
+    public Developpeur[] loadAllDeveloppeur();
 
     @Query("DELETE FROM Developpeur")
-    public void deleteAllUtilisateurs();
+    public void deleteAllDeveloppeurs();
 
     @Insert
-    public void insertUtilisateur(Developpeur developpeur);
+    public void insertDeveloppeur(Developpeur developpeur);
 
-    @Query("SELECT * FROM Developpeur WHERE email = :utilisateurEmail")
-    public Developpeur loadUtilisateur(String utilisateurEmail);
+    @Query("SELECT * FROM Developpeur WHERE email = :developpeurEmail")
+    public Developpeur loadDeveloppeur(String developpeurEmail);
 
 }

@@ -66,9 +66,9 @@ public class Inscription_dev extends AppCompatActivity {
 
                 if(isValid) {
                     database = AppDatabase.getDatabase(getApplicationContext());
-                    Developpeur developpeur = new Developpeur(nom.getText().toString(), prenom.getText().toString(), motdepasse.getText().toString(), mail.getText().toString(), experience.getText().toString(), telephone.getText().toString(), adresse.getText().toString(), false);
+                    Developpeur developpeur = new Developpeur(nom.getText().toString(), prenom.getText().toString(), motdepasse.getText().toString(), mail.getText().toString(), experience.getText().toString(), telephone.getText().toString(), adresse.getText().toString());
 
-                    database.developpeurDao().insertUtilisateur(developpeur);
+                    database.developpeurDao().insertDeveloppeur(developpeur);
 
                     Intent appel_dev = new Intent(Inscription_dev.this, LoginActivity.class);
                     startActivity(appel_dev);
