@@ -40,6 +40,7 @@ import static android.Manifest.permission.READ_CONTACTS;
  */
 public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<Cursor> {
 
+    private AppDatabase database;
     /**
      * Id to identity READ_CONTACTS permission request.
      */
@@ -193,10 +194,18 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         } else {
             // Show a progress spinner, and kick off a background task to
             // perform the user login attempt.
-            showProgress(true);
+            //showProgress(true);
             /*mAuthTask = new UserLoginTask(email, password);
             mAuthTask.execute();*/
 
+            database = AppDatabase.getDatabase(getApplicationContext());
+
+            Utilisateur[] utilisateurs = database.utilisateurDao().loadAllUtilisateurs();
+            Utilisateur utilisateur = database.utilisateurDao().loadUtilisateur(email);
+            if(utilisateur != null && utilisateur.getMdp().equals(password)){
+                Intent appel_profil = new Intent(LoginActivity.this, Inscription1.class);
+                startActivity(appel_profil);
+            }
         }
     }
 

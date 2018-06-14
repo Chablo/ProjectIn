@@ -3,6 +3,8 @@ package com.example.miren.projectin;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import io.reactivex.annotations.NonNull;
+
 /**
  * Created by Miren on 14/06/2018.
  */
@@ -10,12 +12,13 @@ import android.arch.persistence.room.PrimaryKey;
 @Entity
 public class Utilisateur {
 
-    @PrimaryKey(autoGenerate = true)
-    public int id;
+    @PrimaryKey
+    @android.support.annotation.NonNull
+    private String email;
     private String nom;
     private String prenom;
     private String mdp;
-    private String email;
+
     private String expertise;
     private String telephone;
     private String adresse;
@@ -30,14 +33,6 @@ public class Utilisateur {
         this.telephone = telephone;
         this.adresse = adresse;
         this.isLeader = isLeader;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public Boolean getLeader() {

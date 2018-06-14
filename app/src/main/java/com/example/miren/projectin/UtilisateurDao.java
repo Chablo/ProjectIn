@@ -9,6 +9,13 @@ public interface UtilisateurDao {
     @Query("SELECT * FROM Utilisateur")
     public Utilisateur[] loadAllUtilisateurs();
 
+    @Query("DELETE FROM Utilisateur")
+    public void deleteAllUtilisateurs();
+
     @Insert
     public void insertUtilisateur(Utilisateur utilisateur);
+
+    @Query("SELECT * FROM Utilisateur WHERE email = :utilisateurEmail")
+    public Utilisateur loadUtilisateur(String utilisateurEmail);
+
 }

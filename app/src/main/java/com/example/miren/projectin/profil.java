@@ -70,7 +70,7 @@ public class profil extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.profil) {
+        /*if (id == R.id.profil) {
             Intent productIntent = new Intent(this,profil.class);
             startActivity(productIntent);
             return true;
@@ -83,7 +83,7 @@ public class profil extends AppCompatActivity
         } else if(id == R.id.deconnexion) {
             Intent productIntent = new Intent(this, LoginActivity.class);
             startActivity(productIntent);
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }

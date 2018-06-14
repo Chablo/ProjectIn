@@ -67,7 +67,7 @@ public class Inscription_dev extends AppCompatActivity {
 
                 if(isValid) {
                     database = AppDatabase.getDatabase(getApplicationContext());
-                    Utilisateur utilisateur = new Utilisateur(nom.toString(), prenom.toString(), motdepasse.toString(), mail.toString(), experience.toString(), telephone.toString(), adresse.toString(), false);
+                    Utilisateur utilisateur = new Utilisateur(nom.getText().toString(), prenom.getText().toString(), motdepasse.getText().toString(), mail.getText().toString(), experience.getText().toString(), telephone.getText().toString(), adresse.getText().toString(), false);
 
                     database.utilisateurDao().insertUtilisateur(utilisateur);
 
