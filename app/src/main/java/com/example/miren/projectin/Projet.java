@@ -11,26 +11,20 @@ import static android.arch.persistence.room.ForeignKey.CASCADE;
 /**
  * Created by Miren on 13/06/2018.
  */
-//@Entity(foreignKeys = @ForeignKey(entity = Leader.class, parentColumns = "email", childColumns = "leaderEmail", onDelete = CASCADE))
+@Entity(foreignKeys = @ForeignKey(entity = Leader.class, parentColumns = "email", childColumns = "leaderEmail", onDelete = CASCADE))
 public class Projet {
 
-    //@PrimaryKey(autoGenerate = true)
+    @PrimaryKey(autoGenerate = true)
     private int id;
     private String nom;
     private String description;
-    private String dateDebut;
-    private String dateFin;
-    private Integer nbDev;
     private String competences;
     private String leaderEmail;
     private String[] developpeurEmails;
 
-    public Projet(String nom, String description, String dateDebut, String dateFin, Integer nbDev, String competences) {
+    public Projet(String nom, String description, String competences) {
         this.nom = nom;
         this.description = description;
-        this.dateDebut = dateDebut;
-        this.dateFin = dateFin;
-        this.nbDev = nbDev;
         this.competences = competences;
     }
 
@@ -56,30 +50,6 @@ public class Projet {
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getDateDebut() {
-        return dateDebut;
-    }
-
-    public void setDateDebut(String dateDebut) {
-        this.dateDebut = dateDebut;
-    }
-
-    public String getDateFin() {
-        return dateFin;
-    }
-
-    public void setDateFin(String dateFin) {
-        this.dateFin = dateFin;
-    }
-
-    public Integer getNbDev() {
-        return nbDev;
-    }
-
-    public void setNbDev(Integer nbDev) {
-        this.nbDev = nbDev;
     }
 
     public String getCompetences() {
