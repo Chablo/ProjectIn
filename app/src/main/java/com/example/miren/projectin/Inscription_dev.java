@@ -2,10 +2,7 @@ package com.example.miren.projectin;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -24,10 +21,10 @@ public class Inscription_dev extends AppCompatActivity {
         inscription_dev.setOnClickListener(new View.OnClickListener() {
             //récupération des propriétés
             TextView nom = (TextView) findViewById(R.id.nom);
-            TextView prenom = (TextView) findViewById(R.id.prenom);
+            TextView prenom = (TextView) findViewById(R.id.date_debut);
             TextView motdepasse = (TextView) findViewById(R.id.motdepasse);
-            TextView mail = (TextView) findViewById(R.id.mail);
-            TextView experience = (TextView) findViewById(R.id.experience);
+            TextView mail = (TextView) findViewById(R.id.nb_dev);
+            TextView experience = (TextView) findViewById(R.id.description);
             TextView telephone = (TextView) findViewById(R.id.telephone);
             TextView adresse = (TextView) findViewById(R.id.adresse);
 
