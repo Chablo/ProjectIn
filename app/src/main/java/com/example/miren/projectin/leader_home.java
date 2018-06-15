@@ -103,7 +103,6 @@ public class leader_home extends AppCompatActivity
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
             Intent productIntent = new Intent(this, Leader_profil.class);
-
             productIntent.putExtra("nom", nom);
             productIntent.putExtra("prenom", prenom);
             productIntent.putExtra("mdp", mdp);
@@ -111,7 +110,6 @@ public class leader_home extends AppCompatActivity
             productIntent.putExtra("expertise", expertise);
             productIntent.putExtra("adresse", adresse);
             productIntent.putExtra("tel", tel);
-
             startActivity(productIntent);
             return true;
         } else if(id == R.id.ajouter_projet) {

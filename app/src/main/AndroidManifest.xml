@@ -41,10 +41,6 @@
             android:label="@string/title_activity_leader_home"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".dev_home"
-            android:label="@string/title_activity_dev_home"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".ajouter_projet"
             android:label="@string/title_activity_ajouter_projet"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -55,6 +51,10 @@
         <activity
             android:name=".Dev_profil"
             android:label="@string/title_activity_dev_profil"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Dev_home"
+            android:label="@string/title_activity_dev_home"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -87,39 +87,62 @@ public class Dev_profil extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        Intent intent = getIntent();
+        final String nom = intent.getExtras().getString("nom");
+        final String prenom = intent.getExtras().getString("prenom");
+        final String mdp = intent.getExtras().getString("mdp");
+        final String mail = intent.getExtras().getString("mail");
+        final String expertise = intent.getExtras().getString("expertise");
+        final String adresse = intent.getExtras().getString("adresse");
+        final String tel = intent.getExtras().getString("tel");
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.profil) {
+            Intent productIntent = new Intent(this, Dev_profil.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
+            startActivity(productIntent);
+            return true;
+        } else if(id == R.id.voir_projets) {
+            Intent productIntent = new Intent(this, Dev_home.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
+            startActivity(productIntent);
+        } else if(id == R.id.projets) {
+            Intent productIntent = new Intent(this, Dev_home.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
+            startActivity(productIntent);
+        } else if(id == R.id.deconnexion) {
+            Intent productIntent = new Intent(this, LoginActivity.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
+            startActivity(productIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -65,8 +65,6 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
 
-    public final static String KEY_TYPE = "nom";
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -150,8 +148,8 @@ public class LoginActivity extends AppCompatActivity {
 
             Developpeur developpeur = database.developpeurDao().loadDeveloppeur(email);
             if(developpeur != null && developpeur.getMdp().equals(password)){
-                Intent intent = new Intent(LoginActivity.this, dev_home.class);
-                /*String nom = developpeur.getNom();
+                Intent intent = new Intent(LoginActivity.this, Dev_home.class);
+                String nom = developpeur.getNom();
                 String prenom = developpeur.getPrenom();
                 String mdp = developpeur.getMdp();
                 String mail = developpeur.getEmail();
@@ -165,8 +163,7 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("mail", mail);
                 intent.putExtra("expertise", expertise);
                 intent.putExtra("adresse", adresse);
-                intent.putExtra("tel", tel);*/
-
+                intent.putExtra("tel", tel);
                 startActivity(intent);
             } else if(developpeur != null && !developpeur.getMdp().equals(password)){
                 mPasswordView.setError(getString(R.string.error_incorrect_password));

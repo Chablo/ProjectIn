@@ -14,10 +14,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class dev_home extends AppCompatActivity
+public class Dev_home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private AppDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +40,7 @@ public class dev_home extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
     }
 
     @Override
@@ -66,20 +65,17 @@ public class dev_home extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Intent intent = getIntent();
+        final String nom = intent.getExtras().getString("nom");
+        final String prenom = intent.getExtras().getString("prenom");
+        final String mdp = intent.getExtras().getString("mdp");
+        final String mail = intent.getExtras().getString("mail");
+        final String expertise = intent.getExtras().getString("expertise");
+        final String adresse = intent.getExtras().getString("adresse");
+        final String tel = intent.getExtras().getString("tel");
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
-            /*Intent intent = getIntent();
-            final String nom = intent.getExtras().getString("nom");
-            final String prenom = intent.getExtras().getString("prenom");
-            final String mdp = intent.getExtras().getString("mdp");
-            final String mail = intent.getExtras().getString("mail");
-            final String expertise = intent.getExtras().getString("expertise");
-            final String adresse = intent.getExtras().getString("adresse");
-            final String tel = intent.getExtras().getString("tel");
-
-            Intent productIntent = new Intent(this, Leader_profil.class);
-
+            Intent productIntent = new Intent(this, Dev_profil.class);
             productIntent.putExtra("nom", nom);
             productIntent.putExtra("prenom", prenom);
             productIntent.putExtra("mdp", mdp);
@@ -87,19 +83,40 @@ public class dev_home extends AppCompatActivity
             productIntent.putExtra("expertise", expertise);
             productIntent.putExtra("adresse", adresse);
             productIntent.putExtra("tel", tel);
-
-            startActivity(productIntent);*/
+            startActivity(productIntent);
             return true;
         } else if(id == R.id.voir_projets) {
-            Intent productIntent = new Intent(this, dev_home.class);
+            Intent productIntent = new Intent(this, Dev_home.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         } else if(id == R.id.projets) {
-            Intent productIntent = new Intent(this, dev_home.class);
+            Intent productIntent = new Intent(this, Dev_home.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         } else if(id == R.id.deconnexion) {
             Intent productIntent = new Intent(this, LoginActivity.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         }
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
