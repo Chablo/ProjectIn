@@ -73,9 +73,7 @@ public class ajouter_projet extends AppCompatActivity implements NavigationView.
                     final String tel = intent.getExtras().getString("tel");
 
                     Intent appel_leader_home = new Intent(ajouter_projet.this, leader_home.class);
-<<<<<<< HEAD
-                    appel_leader_home.putExtra("mail", mail);
-=======
+
                     appel_leader_home.putExtra("nom", nom);
                     appel_leader_home.putExtra("prenom", prenom);
                     appel_leader_home.putExtra("mdp", mdp);
@@ -83,7 +81,7 @@ public class ajouter_projet extends AppCompatActivity implements NavigationView.
                     appel_leader_home.putExtra("expertise", expertise);
                     appel_leader_home.putExtra("adresse", adresse);
                     appel_leader_home.putExtra("tel", tel);
->>>>>>> delete button
+
                     startActivity(appel_leader_home);
                 }
             }
