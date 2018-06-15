@@ -44,44 +44,6 @@
                 tools:layout_editor_absoluteY="163dp" />
 
             <EditText
-                android:id="@+id/date_debut"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/nb_dev"
-                android:layout_alignStart="@+id/telephone"
-                android:layout_marginBottom="16dp"
-                android:ems="10"
-                android:hint="Date de début"
-                android:inputType="date"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="71dp" />
-
-            <EditText
-                android:id="@+id/date_fin"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/date_debut"
-                android:layout_alignStart="@+id/date_debut"
-                android:ems="10"
-                android:hint="Date de fin"
-                android:inputType="date"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="117dp" />
-
-            <EditText
-                android:id="@+id/nb_dev"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/description"
-                android:layout_alignEnd="@+id/button3"
-                android:layout_marginBottom="13dp"
-                android:ems="10"
-                android:hint="Nombre de développeurs"
-                android:inputType="number"
-                tools:layout_editor_absoluteX="85dp"
-                tools:layout_editor_absoluteY="265dp" />
-
-            <EditText
                 android:id="@+id/competences"
                 android:layout_width="match_parent"
                 android:layout_height="102dp"
