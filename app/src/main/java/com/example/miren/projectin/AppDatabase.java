@@ -7,7 +7,7 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-@Database(entities = {Developpeur.class, Leader.class}, version = 5)
+@Database(entities = {Developpeur.class, Leader.class}, version = 6)
 abstract class AppDatabase extends RoomDatabase {
 
     private static AppDatabase INSTANCE;
@@ -15,6 +15,8 @@ abstract class AppDatabase extends RoomDatabase {
     abstract public DeveloppeurDao developpeurDao();
 
     abstract public LeaderDao leaderDao();
+
+    abstract public ProjetDao projetDao();
 
     public static AppDatabase getDatabase(Context context) {
         if (INSTANCE == null) {

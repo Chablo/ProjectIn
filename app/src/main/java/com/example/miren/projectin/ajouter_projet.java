@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.text.TextUtils;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -13,9 +14,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
 
-public class ajouter_projet extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import org.w3c.dom.Text;
+
+public class ajouter_projet extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+
+    private AppDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +30,39 @@ public class ajouter_projet extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+        Button ajouter_projet = (Button) findViewById(R.id.button3);
+
+        ajouter_projet.setOnClickListener(new View.OnClickListener() {
+
+            TextView nom = (TextView) findViewById(R.id.nom);
+            TextView description = (TextView) findViewById(R.id.description);
+            TextView competences = (TextView) findViewById(R.id.competences);
+
+            public void onClick(View v) {
+                Boolean isValid = true;
+
+                if( TextUtils.isEmpty(nom.getText())){
+                    nom.setError( "Le nom est obligatoire!" );
+                    isValid = false;
+                }
+                if( TextUtils.isEmpty(description.getText())){
+                    description.setError( "La description est obligatoire!" );
+                    isValid = false;
+                }
+                if( TextUtils.isEmpty(competences.getText())){
+                    competences.setError( "La compétence est obligatoire!" );
+                    isValid = false;
+                }
+
+                if(isValid) {
+                    database = AppDatabase.getDatabase(getApplicationContext());
+                    Projet projet = new Projet(nom.getText().toString(), description.getText().toString(), competences.getText().toString());
+
+                    database.projetDao().insertProjet(projet);
+
+                    Intent appel_leader_home = new Intent(ajouter_projet.this, leader_home.class);
+                    startActivity(appel_leader_home);
+                }
             }
         });
 
