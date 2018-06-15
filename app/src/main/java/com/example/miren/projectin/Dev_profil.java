@@ -13,18 +13,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
-public class dev_home extends AppCompatActivity
+public class Dev_profil extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_dev_home);
+        setContentView(R.layout.activity_dev_profil);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        Developpeur developpeur = (Developpeur) getIntent().getSerializableExtra("developpeur");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +41,33 @@ public class dev_home extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        //remplir les champs
+        Intent intent = getIntent();
+        final String nom = intent.getExtras().getString("nom");
+        final String prenom = intent.getExtras().getString("prenom");
+        final String mdp = intent.getExtras().getString("mdp");
+        final String mail = intent.getExtras().getString("mail");
+        final String expertise = intent.getExtras().getString("expertise");
+        final String adresse = intent.getExtras().getString("adresse");
+        final String tel = intent.getExtras().getString("tel");
+
+        TextView nomT = (TextView) findViewById(R.id.nom);
+        TextView prenomT = (TextView) findViewById(R.id.prenom);
+        TextView mdpT = (TextView) findViewById(R.id.mdp);
+        TextView mailT = (TextView) findViewById(R.id.mail);
+        TextView expertiseT = (TextView) findViewById(R.id.expertise);
+        TextView adresseT = (TextView) findViewById(R.id.adresse);
+        TextView telT = (TextView) findViewById(R.id.telephone);
+
+        nomT.setText(nom);
+        prenomT.setText(prenom);
+        mdpT.setText(mdp);
+        mailT.setText(mail);
+        expertiseT.setText(expertise);
+        adresseT.setText(adresse);
+        telT.setText(tel);
     }
 
     @Override
@@ -57,7 +83,7 @@ public class dev_home extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.dev_home, menu);
+        getMenuInflater().inflate(R.menu.dev_profil, menu);
         return true;
     }
 
@@ -69,37 +95,8 @@ public class dev_home extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.profil) {
-            Intent intent = getIntent();
-            final String nom = intent.getExtras().getString("nom");
-            final String prenom = intent.getExtras().getString("prenom");
-            final String mdp = intent.getExtras().getString("mdp");
-            final String mail = intent.getExtras().getString("mail");
-            final String expertise = intent.getExtras().getString("expertise");
-            final String adresse = intent.getExtras().getString("adresse");
-            final String tel = intent.getExtras().getString("tel");
-
-            Intent productIntent = new Intent(this, Leader_profil.class);
-
-            productIntent.putExtra("nom", nom);
-            productIntent.putExtra("prenom", prenom);
-            productIntent.putExtra("mdp", mdp);
-            productIntent.putExtra("mail", mail);
-            productIntent.putExtra("expertise", expertise);
-            productIntent.putExtra("adresse", adresse);
-            productIntent.putExtra("tel", tel);
-
-            startActivity(productIntent);
+        if (id == R.id.action_settings) {
             return true;
-        } else if(id == R.id.voir_projets) {
-            Intent productIntent = new Intent(this, dev_home.class);
-            startActivity(productIntent);
-        } else if(id == R.id.projets) {
-            Intent productIntent = new Intent(this, dev_projets.class);
-            startActivity(productIntent);
-        } else if(id == R.id.deconnexion) {
-            Intent productIntent = new Intent(this, LoginActivity.class);
-            startActivity(productIntent);
         }
 
         return super.onOptionsItemSelected(item);

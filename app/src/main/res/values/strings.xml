@@ -24,4 +24,5 @@
     <string name="title_activity_ajouter_projet">ajouter_projet</string>
     <string name="title_activity_profil">profil</string>
     <string name="title_activity_leader_profil">Leader_profil</string>
+    <string name="title_activity_dev_profil">Dev_profil</string>
 </resources>

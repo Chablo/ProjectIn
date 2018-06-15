@@ -149,9 +149,24 @@ public class LoginActivity extends AppCompatActivity {
 
             Developpeur developpeur = database.developpeurDao().loadDeveloppeur(email);
             if(developpeur != null && developpeur.getMdp().equals(password)){
-                Intent appel_accueil = new Intent(LoginActivity.this, dev_home.class);
-                appel_accueil.putExtra("Developpeur", (Serializable) developpeur);
-                startActivity(appel_accueil);
+                Intent intent = new Intent(LoginActivity.this, dev_home.class);
+                String nom = developpeur.getNom();
+                String prenom = developpeur.getPrenom();
+                String mdp = developpeur.getMdp();
+                String mail = developpeur.getEmail();
+                String expertise = developpeur.getExpertise();
+                String adresse = developpeur.getAdresse();
+                String tel = developpeur.getTelephone();
+
+                intent.putExtra("nom", nom);
+                intent.putExtra("prenom", prenom);
+                intent.putExtra("mdp", mdp);
+                intent.putExtra("mail", mail);
+                intent.putExtra("expertise", expertise);
+                intent.putExtra("adresse", adresse);
+                intent.putExtra("tel", tel);
+
+                startActivity(intent);
             } else if(developpeur != null && !developpeur.getMdp().equals(password)){
                 mPasswordView.setError(getString(R.string.error_incorrect_password));
                 focusView = mPasswordView;
