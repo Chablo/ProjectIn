@@ -40,7 +40,10 @@ public class leader_home extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = getIntent();
+                final String mail = intent.getExtras().getString("mail");
                 Intent appel_projet = new Intent(leader_home.this, ajouter_projet.class);
+                appel_projet.putExtra("mail", mail);
                 startActivity(appel_projet);
             }
         });

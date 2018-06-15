@@ -16,10 +16,14 @@ public class ProjetAdapter extends RecyclerView.Adapter<ProjetAdapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
 
         public TextView projetNom;
+        public TextView projetDescription;
+        public TextView projetCompetences;
 
         public ViewHolder(View view) {
             super(view);
-            projetNom = (TextView) view.findViewById(R.id.nom);
+            projetNom = (TextView) view.findViewById(R.id.projetNom);
+            projetDescription = (TextView) view.findViewById(R.id.projetDescription);
+            projetCompetences = (TextView) view.findViewById(R.id.projetCompetences);
         }
     }
 
@@ -38,6 +42,8 @@ public class ProjetAdapter extends RecyclerView.Adapter<ProjetAdapter.ViewHolder
     public void onBindViewHolder(ViewHolder holder, int position) {
         Projet projet = projets[position];
         holder.projetNom.setText(projet.getNom());
+        holder.projetDescription.setText(projet.getDescription());
+        holder.projetCompetences.setText(projet.getCompetences());
     }
 
     @Override
