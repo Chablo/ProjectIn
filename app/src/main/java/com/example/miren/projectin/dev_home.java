@@ -91,7 +91,7 @@ public class dev_home extends AppCompatActivity
 
             startActivity(productIntent);
             return true;
-        } else if(id == R.id.voir_projets) {
+        } /*else if(id == R.id.voir_projets) {
             Intent productIntent = new Intent(this, dev_home.class);
             startActivity(productIntent);
         } else if(id == R.id.projets) {
@@ -100,7 +100,7 @@ public class dev_home extends AppCompatActivity
         } else if(id == R.id.deconnexion) {
             Intent productIntent = new Intent(this, LoginActivity.class);
             startActivity(productIntent);
-        }
+        }*/
 
         return super.onOptionsItemSelected(item);
     }
