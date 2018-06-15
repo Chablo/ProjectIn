@@ -17,5 +17,4 @@ public interface DeveloppeurDao {
 
     @Query("SELECT * FROM Developpeur WHERE email = :developpeurEmail")
     public Developpeur loadDeveloppeur(String developpeurEmail);
-
 }

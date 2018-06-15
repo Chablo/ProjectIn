@@ -63,8 +63,27 @@ public class ajouter_projet extends AppCompatActivity implements NavigationView.
 
                     database.projetDao().insertProjet(projet);
 
+                    Intent i = getIntent();
+                    final String nom = intent.getExtras().getString("nom");
+                    final String prenom = intent.getExtras().getString("prenom");
+                    final String mdp = intent.getExtras().getString("mdp");
+                    final String email = intent.getExtras().getString("mail");
+                    final String expertise = intent.getExtras().getString("expertise");
+                    final String adresse = intent.getExtras().getString("adresse");
+                    final String tel = intent.getExtras().getString("tel");
+
                     Intent appel_leader_home = new Intent(ajouter_projet.this, leader_home.class);
+<<<<<<< HEAD
                     appel_leader_home.putExtra("mail", mail);
+=======
+                    appel_leader_home.putExtra("nom", nom);
+                    appel_leader_home.putExtra("prenom", prenom);
+                    appel_leader_home.putExtra("mdp", mdp);
+                    appel_leader_home.putExtra("mail", email);
+                    appel_leader_home.putExtra("expertise", expertise);
+                    appel_leader_home.putExtra("adresse", adresse);
+                    appel_leader_home.putExtra("tel", tel);
+>>>>>>> delete button
                     startActivity(appel_leader_home);
                 }
             }
