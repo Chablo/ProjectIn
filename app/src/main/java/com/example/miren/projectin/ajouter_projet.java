@@ -56,7 +56,10 @@ public class ajouter_projet extends AppCompatActivity implements NavigationView.
 
                 if(isValid) {
                     database = AppDatabase.getDatabase(getApplicationContext());
-                    Projet projet = new Projet(nom.getText().toString(), description.getText().toString(), competences.getText().toString(), "some");
+                    Intent intent = getIntent();
+                    final String mail = intent.getExtras().getString("mail");
+
+                    Projet projet = new Projet(nom.getText().toString(), description.getText().toString(), competences.getText().toString(), mail);
 
                     database.projetDao().insertProjet(projet);
 

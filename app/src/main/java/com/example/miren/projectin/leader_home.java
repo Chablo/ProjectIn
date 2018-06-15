@@ -95,17 +95,17 @@ public class leader_home extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Intent intent = getIntent();
+        final String nom = intent.getExtras().getString("nom");
+        final String prenom = intent.getExtras().getString("prenom");
+        final String mdp = intent.getExtras().getString("mdp");
+        final String mail = intent.getExtras().getString("mail");
+        final String expertise = intent.getExtras().getString("expertise");
+        final String adresse = intent.getExtras().getString("adresse");
+        final String tel = intent.getExtras().getString("tel");
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
-            Intent intent = getIntent();
-            final String nom = intent.getExtras().getString("nom");
-            final String prenom = intent.getExtras().getString("prenom");
-            final String mdp = intent.getExtras().getString("mdp");
-            final String mail = intent.getExtras().getString("mail");
-            final String expertise = intent.getExtras().getString("expertise");
-            final String adresse = intent.getExtras().getString("adresse");
-            final String tel = intent.getExtras().getString("tel");
-
             Intent productIntent = new Intent(this, Leader_profil.class);
 
             productIntent.putExtra("nom", nom);
@@ -120,6 +120,7 @@ public class leader_home extends AppCompatActivity
             return true;
         } else if(id == R.id.ajouter_projet) {
             Intent productIntent = new Intent(this, ajouter_projet.class);
+            productIntent.putExtra("mail", mail);
             startActivity(productIntent);
         } else if(id == R.id.projets) {
             Intent productIntent = new Intent(this, leader_home.class);
