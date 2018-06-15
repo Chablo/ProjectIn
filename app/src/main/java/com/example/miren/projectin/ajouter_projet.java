@@ -64,6 +64,7 @@ public class ajouter_projet extends AppCompatActivity implements NavigationView.
                     database.projetDao().insertProjet(projet);
 
                     Intent appel_leader_home = new Intent(ajouter_projet.this, leader_home.class);
+                    appel_leader_home.putExtra("mail", mail);
                     startActivity(appel_leader_home);
                 }
             }

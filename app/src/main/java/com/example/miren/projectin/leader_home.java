@@ -36,12 +36,13 @@ public class leader_home extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        Intent intent = getIntent();
+        final String mail = intent.getExtras().getString("mail");
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getIntent();
-                final String mail = intent.getExtras().getString("mail");
                 Intent appel_projet = new Intent(leader_home.this, ajouter_projet.class);
                 appel_projet.putExtra("mail", mail);
                 startActivity(appel_projet);
@@ -65,7 +66,7 @@ public class leader_home extends AppCompatActivity
         rv.setLayoutManager(mLayoutManager);
 
         database = AppDatabase.getDatabase(getApplicationContext());
-        Projet[] projets = database.projetDao().loadAllProjets();
+        Projet[] projets = database.projetDao().loadLeaderProjets(mail);
 
         RecyclerView.Adapter projetAdapter = new ProjetAdapter(projets);
         rv.setAdapter(projetAdapter);
