@@ -101,7 +101,7 @@ public class ajouter_projet extends AppCompatActivity implements NavigationView.
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
-            Intent productIntent = new Intent(this,profil.class);
+            Intent productIntent = new Intent(this,Leader_profil.class);
             startActivity(productIntent);
             return true;
         } else if(id == R.id.ajouter_projet) {

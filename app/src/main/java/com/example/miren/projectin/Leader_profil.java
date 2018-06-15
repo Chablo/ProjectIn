@@ -1,5 +1,6 @@
 package com.example.miren.projectin;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +13,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class Leader_profil extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -40,6 +44,32 @@ public class Leader_profil extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //remplir les champs
+        Intent intent = getIntent();
+        final String nom = intent.getExtras().getString("nom");
+        final String prenom = intent.getExtras().getString("prenom");
+        final String mdp = intent.getExtras().getString("mdp");
+        final String mail = intent.getExtras().getString("mail");
+        final String expertise = intent.getExtras().getString("expertise");
+        final String adresse = intent.getExtras().getString("adresse");
+        final String tel = intent.getExtras().getString("tel");
+
+        TextView nomT = (TextView) findViewById(R.id.nom);
+        TextView prenomT = (TextView) findViewById(R.id.prenom);
+        TextView mdpT = (TextView) findViewById(R.id.mdp);
+        TextView mailT = (TextView) findViewById(R.id.mail);
+        TextView expertiseT = (TextView) findViewById(R.id.expertise);
+        TextView adresseT = (TextView) findViewById(R.id.adresse);
+        TextView telT = (TextView) findViewById(R.id.telephone);
+
+        nomT.setText(nom);
+        prenomT.setText(prenom);
+        mdpT.setText(mdp);
+        mailT.setText(mail);
+        expertiseT.setText(expertise);
+        adresseT.setText(adresse);
+        telT.setText(tel);
     }
 
     @Override
@@ -59,39 +89,26 @@ public class Leader_profil extends AppCompatActivity
         return true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.profil) {
+            Intent productIntent = new Intent(this,Leader_profil.class);
+            startActivity(productIntent);
+            return true;
+        } else if(id == R.id.ajouter_projet) {
+            Intent productIntent = new Intent(this, ajouter_projet.class);
+            startActivity(productIntent);
+        } else if(id == R.id.projets) {
+            Intent productIntent = new Intent(this, leader_home.class);
+            startActivity(productIntent);
+        } else if(id == R.id.deconnexion) {
+            Intent productIntent = new Intent(this, LoginActivity.class);
+            startActivity(productIntent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

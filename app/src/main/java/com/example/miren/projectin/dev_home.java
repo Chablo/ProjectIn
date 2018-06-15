@@ -70,8 +70,8 @@ public class dev_home extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
-            Intent productIntent = new Intent(this,profil.class);
-            startActivity(productIntent);
+            //Intent productIntent = new Intent(this,Dev_profil.class);
+            //startActivity(productIntent);
             return true;
         } else if(id == R.id.ajouter_projet) {
             Intent productIntent = new Intent(this, ajouter_projet.class);

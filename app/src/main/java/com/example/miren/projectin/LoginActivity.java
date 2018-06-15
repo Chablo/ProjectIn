@@ -3,8 +3,11 @@ package com.example.miren.projectin;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.os.Parcelable;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -61,10 +64,14 @@ public class LoginActivity extends AppCompatActivity {
     private View mProgressView;
     private View mLoginFormView;
 
+    public final static String KEY_TYPE = "nom";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
 
@@ -151,9 +158,24 @@ public class LoginActivity extends AppCompatActivity {
             } else if(developpeur == null){
                 Leader leader = database.leaderDao().loadLeader(email);
                 if(leader != null && leader.getMdp().equals(password)){
-                    Intent appel_accueil = new Intent(LoginActivity.this, leader_home.class);
-                   // appel_accueil.putExtra("leader", (Serializable) leader);
-                    startActivity(appel_accueil);
+                    Intent intent = new Intent(LoginActivity.this, leader_home.class);
+                    String nom = leader.getNom();
+                    String prenom = leader.getPrenom();
+                    String mdp = leader.getMdp();
+                    String mail = leader.getEmail();
+                    String expertise = leader.getExpertise();
+                    String adresse = leader.getAdresse();
+                    String tel = leader.getTelephone();
+
+                    intent.putExtra("nom", nom);
+                    intent.putExtra("prenom", prenom);
+                    intent.putExtra("mdp", mdp);
+                    intent.putExtra("mail", mail);
+                    intent.putExtra("expertise", expertise);
+                    intent.putExtra("adresse", adresse);
+                    intent.putExtra("tel", tel);
+
+                    startActivity(intent);
                 } else if(leader != null && !leader.getMdp().equals(password)) {
                     mPasswordView.setError(getString(R.string.error_incorrect_password));
                     focusView = mPasswordView;

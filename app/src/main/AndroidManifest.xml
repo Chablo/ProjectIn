@@ -49,10 +49,6 @@
             android:label="@string/title_activity_ajouter_projet"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".profil"
-            android:label="@string/title_activity_profil"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
             android:name=".Leader_profil"
             android:label="@string/title_activity_leader_profil"
             android:theme="@style/AppTheme.NoActionBar"></activity>

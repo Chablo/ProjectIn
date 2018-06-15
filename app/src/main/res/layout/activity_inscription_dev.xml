@@ -22,7 +22,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/nb_dev"
+                android:layout_alignStart="@+id/mail"
                 android:ems="10"
                 android:hint="Nom"
                 android:inputType="text"
@@ -30,10 +30,10 @@
                 tools:layout_editor_absoluteY="25dp" />
 
             <EditText
-                android:id="@+id/date_debut"
+                android:id="@+id/prenom"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/nb_dev"
+                android:layout_above="@+id/mail"
                 android:layout_alignStart="@+id/telephone"
                 android:layout_marginBottom="16dp"
                 android:ems="10"
@@ -46,8 +46,8 @@
                 android:id="@+id/motdepasse"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/date_debut"
-                android:layout_alignStart="@+id/date_debut"
+                android:layout_above="@+id/prenom"
+                android:layout_alignStart="@+id/prenom"
                 android:ems="10"
                 android:hint="Mot de passe"
                 android:inputType="textPassword"
@@ -55,10 +55,10 @@
                 tools:layout_editor_absoluteY="117dp" />
 
             <EditText
-                android:id="@+id/description"
+                android:id="@+id/expertise"
                 android:layout_width="match_parent"
                 android:layout_height="102dp"
-                android:layout_alignStart="@+id/nb_dev"
+                android:layout_alignStart="@+id/mail"
                 android:layout_centerVertical="true"
                 android:ems="10"
                 android:hint="Domaine d'expertise"
@@ -67,10 +67,10 @@
                 tools:layout_editor_absoluteY="163dp" />
 
             <EditText
-                android:id="@+id/nb_dev"
+                android:id="@+id/mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@+id/description"
+                android:layout_above="@+id/expertise"
                 android:layout_alignEnd="@+id/button3"
                 android:layout_marginBottom="13dp"
                 android:ems="10"
@@ -84,7 +84,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignStart="@+id/adresse"
-                android:layout_below="@+id/description"
+                android:layout_below="@+id/expertise"
                 android:ems="10"
                 android:hint="Téléphone"
                 android:inputType="phone"

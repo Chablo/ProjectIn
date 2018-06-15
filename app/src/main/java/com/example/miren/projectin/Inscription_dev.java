@@ -24,10 +24,10 @@ public class Inscription_dev extends AppCompatActivity {
         inscription_dev.setOnClickListener(new View.OnClickListener() {
             //récupération des propriétés
             TextView nom = (TextView) findViewById(R.id.nom);
-            TextView prenom = (TextView) findViewById(R.id.date_debut);
+            TextView prenom = (TextView) findViewById(R.id.prenom);
             TextView motdepasse = (TextView) findViewById(R.id.motdepasse);
-            TextView mail = (TextView) findViewById(R.id.nb_dev);
-            TextView experience = (TextView) findViewById(R.id.description);
+            TextView mail = (TextView) findViewById(R.id.mail);
+            TextView experience = (TextView) findViewById(R.id.expertise);
             TextView telephone = (TextView) findViewById(R.id.telephone);
             TextView adresse = (TextView) findViewById(R.id.adresse);
 

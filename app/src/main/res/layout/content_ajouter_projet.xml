@@ -24,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-                android:layout_alignStart="@+id/nb_dev"
+                android:layout_alignStart="@+id/mail"
                 android:ems="10"
                 android:hint="Nom"
                 android:inputType="textPersonName"
@@ -32,10 +32,10 @@
                 tools:layout_editor_absoluteY="25dp" />
 
             <EditText
-                android:id="@+id/description"
+                android:id="@+id/expertise"
                 android:layout_width="match_parent"
                 android:layout_height="102dp"
-                android:layout_alignStart="@+id/nb_dev"
+                android:layout_alignStart="@+id/mail"
                 android:layout_centerVertical="true"
                 android:ems="10"
                 android:hint="Description"
@@ -47,7 +47,7 @@
                 android:id="@+id/competences"
                 android:layout_width="match_parent"
                 android:layout_height="102dp"
-                android:layout_alignStart="@+id/nb_dev"
+                android:layout_alignStart="@+id/mail"
                 android:layout_centerVertical="true"
                 android:ems="10"
                 android:hint="Competences requises"

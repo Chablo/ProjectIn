@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Base64;
+import android.util.Base64InputStream;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,9 +16,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.TextView;
+
+import java.io.ByteArrayInputStream;
+import java.io.ObjectInputStream;
 
 public class leader_home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public static final String KEY_TYPE = "nom";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,7 +78,25 @@ public class leader_home extends AppCompatActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
+            Intent intent = getIntent();
+            final String nom = intent.getExtras().getString("nom");
+            final String prenom = intent.getExtras().getString("prenom");
+            final String mdp = intent.getExtras().getString("mdp");
+            final String mail = intent.getExtras().getString("mail");
+            final String expertise = intent.getExtras().getString("expertise");
+            final String adresse = intent.getExtras().getString("adresse");
+            final String tel = intent.getExtras().getString("tel");
+
             Intent productIntent = new Intent(this, Leader_profil.class);
+
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
+
             startActivity(productIntent);
             return true;
         } else if(id == R.id.ajouter_projet) {
