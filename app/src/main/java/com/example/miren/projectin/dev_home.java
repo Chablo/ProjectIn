@@ -17,14 +17,14 @@ import android.view.MenuItem;
 public class dev_home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private AppDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dev_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        Developpeur developpeur = (Developpeur) getIntent().getSerializableExtra("developpeur");
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -61,16 +61,15 @@ public class dev_home extends AppCompatActivity
         return true;
     }
 
+    @SuppressWarnings("StatementWithEmptyBody")
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+    public boolean onNavigationItemSelected(MenuItem item) {
+        // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
-            Intent intent = getIntent();
+            /*Intent intent = getIntent();
             final String nom = intent.getExtras().getString("nom");
             final String prenom = intent.getExtras().getString("prenom");
             final String mdp = intent.getExtras().getString("mdp");
@@ -89,40 +88,17 @@ public class dev_home extends AppCompatActivity
             productIntent.putExtra("adresse", adresse);
             productIntent.putExtra("tel", tel);
 
-            startActivity(productIntent);
+            startActivity(productIntent);*/
             return true;
-        } /*else if(id == R.id.voir_projets) {
+        } else if(id == R.id.voir_projets) {
             Intent productIntent = new Intent(this, dev_home.class);
             startActivity(productIntent);
         } else if(id == R.id.projets) {
-            Intent productIntent = new Intent(this, dev_projets.class);
+            Intent productIntent = new Intent(this, dev_home.class);
             startActivity(productIntent);
         } else if(id == R.id.deconnexion) {
             Intent productIntent = new Intent(this, LoginActivity.class);
             startActivity(productIntent);
-        }*/
-
-        return super.onOptionsItemSelected(item);
-    }
-
-    @SuppressWarnings("StatementWithEmptyBody")
-    @Override
-    public boolean onNavigationItemSelected(MenuItem item) {
-        // Handle navigation view item clicks here.
-        int id = item.getItemId();
-
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

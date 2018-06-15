@@ -94,20 +94,56 @@ public class Leader_profil extends AppCompatActivity
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
+        Intent intent = getIntent();
+        final String nom = intent.getExtras().getString("nom");
+        final String prenom = intent.getExtras().getString("prenom");
+        final String mdp = intent.getExtras().getString("mdp");
+        final String mail = intent.getExtras().getString("mail");
+        final String expertise = intent.getExtras().getString("expertise");
+        final String adresse = intent.getExtras().getString("adresse");
+        final String tel = intent.getExtras().getString("tel");
         //noinspection SimplifiableIfStatement
         if (id == R.id.profil) {
-            Intent productIntent = new Intent(this,Leader_profil.class);
+            Intent productIntent = new Intent(this, Leader_profil.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
+
             startActivity(productIntent);
             return true;
         } else if(id == R.id.ajouter_projet) {
             Intent productIntent = new Intent(this, ajouter_projet.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         } else if(id == R.id.projets) {
             Intent productIntent = new Intent(this, leader_home.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         } else if(id == R.id.deconnexion) {
             Intent productIntent = new Intent(this, LoginActivity.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         }
 

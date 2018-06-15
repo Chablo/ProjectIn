@@ -27,7 +27,6 @@ import java.io.ObjectInputStream;
 public class leader_home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    public static final String KEY_TYPE = "nom";
     private AppDatabase database;
 
     @Override
@@ -67,9 +66,6 @@ public class leader_home extends AppCompatActivity
 
         RecyclerView.Adapter projetAdapter = new ProjetAdapter(projets);
         rv.setAdapter(projetAdapter);
-
-
-
     }
 
     @Override
@@ -120,13 +116,33 @@ public class leader_home extends AppCompatActivity
             return true;
         } else if(id == R.id.ajouter_projet) {
             Intent productIntent = new Intent(this, ajouter_projet.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
             productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         } else if(id == R.id.projets) {
             Intent productIntent = new Intent(this, leader_home.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         } else if(id == R.id.deconnexion) {
             Intent productIntent = new Intent(this, LoginActivity.class);
+            productIntent.putExtra("nom", nom);
+            productIntent.putExtra("prenom", prenom);
+            productIntent.putExtra("mdp", mdp);
+            productIntent.putExtra("mail", mail);
+            productIntent.putExtra("expertise", expertise);
+            productIntent.putExtra("adresse", adresse);
+            productIntent.putExtra("tel", tel);
             startActivity(productIntent);
         }
 

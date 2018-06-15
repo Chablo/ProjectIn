@@ -23,6 +23,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -150,7 +151,7 @@ public class LoginActivity extends AppCompatActivity {
             Developpeur developpeur = database.developpeurDao().loadDeveloppeur(email);
             if(developpeur != null && developpeur.getMdp().equals(password)){
                 Intent intent = new Intent(LoginActivity.this, dev_home.class);
-                String nom = developpeur.getNom();
+                /*String nom = developpeur.getNom();
                 String prenom = developpeur.getPrenom();
                 String mdp = developpeur.getMdp();
                 String mail = developpeur.getEmail();
@@ -164,7 +165,7 @@ public class LoginActivity extends AppCompatActivity {
                 intent.putExtra("mail", mail);
                 intent.putExtra("expertise", expertise);
                 intent.putExtra("adresse", adresse);
-                intent.putExtra("tel", tel);
+                intent.putExtra("tel", tel);*/
 
                 startActivity(intent);
             } else if(developpeur != null && !developpeur.getMdp().equals(password)){
