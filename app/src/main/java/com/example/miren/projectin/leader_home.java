@@ -7,6 +7,8 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.util.Base64;
 import android.util.Base64InputStream;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -26,6 +28,7 @@ public class leader_home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     public static final String KEY_TYPE = "nom";
+    private AppDatabase database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +54,22 @@ public class leader_home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        RecyclerView rv = (RecyclerView) findViewById(R.id.recycler_view);
+
+        rv.setHasFixedSize(true);
+
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        rv.setLayoutManager(mLayoutManager);
+
+        database = AppDatabase.getDatabase(getApplicationContext());
+        Projet[] projets = database.projetDao().loadAllProjets();
+
+        RecyclerView.Adapter projetAdapter = new ProjetAdapter(projets);
+        rv.setAdapter(projetAdapter);
+
+
+
     }
 
     @Override

@@ -19,13 +19,23 @@ public class Projet {
     private String nom;
     private String description;
     private String competences;
-    private String leaderEmail;
-    private String[] developpeurEmails;
 
-    public Projet(String nom, String description, String competences) {
+    private String leaderEmail;
+    //private String[] developpeurEmails;
+
+    public Projet(String nom, String description, String competences, String leaderEmail) {
         this.nom = nom;
         this.description = description;
         this.competences = competences;
+        this.leaderEmail = leaderEmail;
+    }
+
+    public String getLeaderEmail() {
+        return leaderEmail;
+    }
+
+    public void setLeaderEmail(String leaderEmail) {
+        this.leaderEmail = leaderEmail;
     }
 
     public int getId() {
