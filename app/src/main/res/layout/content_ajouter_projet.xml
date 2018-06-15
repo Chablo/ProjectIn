@@ -32,7 +32,7 @@
                 tools:layout_editor_absoluteY="25dp" />
 
             <EditText
-                android:id="@+id/expertise"
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="102dp"
                 android:layout_alignStart="@+id/mail"
